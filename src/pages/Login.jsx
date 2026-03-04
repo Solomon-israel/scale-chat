@@ -9,7 +9,9 @@ export default function Login() {
         <div className="flex flex-col items-center w-full mb-8">
           <FaMessage className="message-icon size-15 text-blue-500 mb-3" />
           <h1 className="text-3xl font-bold mb-2">Welcome Back</h1>
-          <p className="text-xs text-gray-500">Sign in to Scale Chart to connect with people</p>
+          <p className="text-xs text-gray-500">
+            Sign in to Scale Chart to connect with people
+          </p>
         </div>
         <div className="w-full">
           <form className="space-y-4 mb-6">
@@ -35,7 +37,12 @@ export default function Login() {
             Create a new account
           </Link>
 
-          <Link to="/forget-password" className="block text-center text-blue-500 text-sm">Forgot password?</Link>
+          <Link
+            to="/forgot-password"
+            className="block text-center text-blue-500 text-sm"
+          >
+            Forgot password?
+          </Link>
         </div>
       </div>
     </div>
