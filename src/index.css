@@ -32,10 +32,10 @@
   }
 
   .message-icon {
-    animation: fadeIn 2s;
+    animation: fadeIn 0.5s ease-in-out;
   }
 
   .slideInRight {
-    animation: slideInRight 2s;
+    animation: slideInRight 0.5s ease-in-out;
   }
 }
