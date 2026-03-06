@@ -1,8 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaMessage } from "react-icons/fa6";
+import { FiLoader } from "react-icons/fi";
 import { Link } from "react-router";
 
 export default function Login() {
+  const [isLoading, setIsLoading] = useState(false);
+
+  function handleLogin(e) {
+    e.preventDefault();
+    setIsLoading(true);
+  }
+
   return (
     <div className="h-screen w-full p-4 flex items-center justify-center">
       <div className="w-full max-w-lg">
@@ -14,7 +22,7 @@ export default function Login() {
           </p>
         </div>
         <div className="w-full">
-          <form className="space-y-4 mb-6">
+          <form className="space-y-4 mb-6" onSubmit={handleLogin}>
             <input
               type="text"
               className="slideInRight border w-full h-11 rounded-lg px-2 outline-none border-gray-400"
@@ -26,8 +34,11 @@ export default function Login() {
               placeholder="Password"
             />
 
-            <button className="bg-blue-500 text-white w-full h-11 rounded-lg hover:bg-blue-800">
-              Login
+            <button
+              className="bg-blue-500 text-white w-full h-11 rounded-lg hover:bg-blue-800 flex justify-center items-center disabled:bg-blue-400"
+              disabled={isLoading}
+            >
+              {isLoading ? <FiLoader className="animate-spin" /> : "Login"}
             </button>
           </form>
           <Link
